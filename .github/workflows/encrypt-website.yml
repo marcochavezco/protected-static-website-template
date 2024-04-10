@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+        env: # Or as an environment variable
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         with:
           node-version: '20'
       - run: npm install
