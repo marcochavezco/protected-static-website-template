@@ -1,0 +1,21 @@
+name: encrypt-website
+run-name: ${{ github.actor }} is deploying Docs changes
+on:
+  push:
+    paths:
+      - Docs/**
+jobs:
+  encrypt-website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm run encrypt
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9.1.4
+        with:
+          add: 'encrypted'
+          author_name: github_actions
