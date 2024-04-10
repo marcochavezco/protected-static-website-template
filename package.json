@@ -1,0 +1,16 @@
+{
+  "name": "protected-static-website-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "encrypt": "staticrypt index.html -t password.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "staticrypt": "^3.4.0"
+  }
+}
